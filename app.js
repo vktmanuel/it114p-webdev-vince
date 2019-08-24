@@ -12,7 +12,7 @@ app.use(express.static(pathUtil.public));
 app.use('/admin',adminRoutes);
 app.use(shopRoutes);
 
-app.use((req, res, next) => {
+app.use((req, res) => {
     res.status(404).sendFile(pathUtil.views + '404.html');
 });
 
