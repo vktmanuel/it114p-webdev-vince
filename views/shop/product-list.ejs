@@ -1,0 +1,46 @@
+<%- include('../includes/head.ejs') %>
+</head>
+
+<body>
+    <%- include('../includes/nav.ejs') %>
+
+    <section class="section">
+        <div class="container">
+            <div class="columns is-multiline">
+                <% if (prods.length > 0) { %>
+                <% for (let product of prods) { %>
+                <div class="column is-one-quarter">
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image container section is-128x128">
+                                <img
+                                    src="<%=product.image_url%>">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <div class="media">
+                                <div class="media-content">
+                                    <p class="subtitle is-6">$<%=product.price%></p>
+                                    <p class="title is-4"><%=product.title%></p>
+                                </div>
+                            </div>
+
+                            <div class="content">
+                                    <%=product.description%>
+                                <br>
+                                <span class="is-size-7"><%=product.created_at%></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <% } %>
+                <% } else { %>
+                <h1>No Products Found!</h1>
+                <% } %>
+            </div>
+        </div>
+    </section>
+    
+</body>
+
+</html>
