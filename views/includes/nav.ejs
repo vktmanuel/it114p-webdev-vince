@@ -1,8 +1,21 @@
-<header class="main-header">
-    <nav class="main-header__nav">
-        <ul class="main-header__item-list">
-            <li class="main-header__item"><a class="<%= path === '/' ? 'active' : '' %>" href="/">Shop</a></li>
-            <li class="main-header__item"><a class="<%= path === 'add-product' ? 'active' : '' %>" href="add-product">Add Product</a></li>
-        </ul>
-    </nav>
-</header>
+<nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+    <div class="container">
+        <div class="navbar-brand">
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbar">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div id="navbar" class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item <%= path === '/' ? 'is-active' : '' %>" href="/">
+                    <i class="mdi mdi-24px mdi-cart"></i>Shop
+                </a>
+                <a class="navbar-item <%= path === 'add-product' ? 'is-active' : '' %>" href="add-product">
+                    <i class="mdi mdi-24px mdi-tag-plus"></i>Add Product
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>

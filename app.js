@@ -18,6 +18,9 @@ const shopRoutes = require('./routes/shop');
 app.use(bodyParser.urlencoded({ extended: false }));
 //To set our public files such as css and js
 app.use(express.static(path.join(__dirname, 'public')));
+app.use('/css', express.static(path.join(__dirname, 'node_modules/bulma/css')));
+app.use('/css', express.static(path.join(__dirname, 'node_modules/@mdi/font/css')));
+app.use('/fonts', express.static(path.join(__dirname, 'node_modules/@mdi/font/fonts')));
 
 //We tell our app to custom routes that we had included
 app.use(adminData.routes);
